@@ -1,35 +1,44 @@
 <!doctype html>
 <html>
 	<head>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-	
-	<title>Eddy Hernandez</title>
-	
+
+	<title>Eddy Hernandez - UI Engineer</title>
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-	
+
 	<style type="text/css">
 	@import url(
-	https://fonts.googleapis.com/css?family=Lato:400,700
+	https://fonts.googleapis.com/css?family=Lato:300,400,700
 );
 body {
 	background: #fff;
 	font-family: Lato, sans-serif;
+	font-weight: 300;
+	color: #333;
 	margin: 0 0 80px;
+	font-size: 15px;
 }
 a {
-	color: #2ecc71;
+	color: #E32B46;
 }
 a:focus,
 a:hover {
-	color: #f1c40f;
+	color: #333;
 	text-decoration: none;
+}
+strong {
+	font-size: smaller;
+	font-weight: 400;
+	color: #333;
+	text-transform: uppercase;
 }
 p {
 	line-height: 1.5;
-	margin: 0;
+	margin: 0 0 .5em 0;
 }
 p + p {
 	margin-top: 10px;
@@ -38,10 +47,15 @@ h1,
 h2,
 h3,
 h4 {
-	margin-top: 0
+	margin-top: 0;
+	font-weight: 300;
+	color: #555;
 }
 section {
-	margin-top: 30px;
+	margin-top: 15px;
+}
+ul, ol {
+	padding-left: 21px;
 }
 li {
 	line-height: 1.8;
@@ -50,7 +64,7 @@ li {
 li:before {
 	content: "\f052";
 	float: left;
-	font: 13px Octicons;
+	font: 16px Octicons;
 	margin-top: 6px;
 	margin-left: -20px;
 	opacity: .1;
@@ -61,13 +75,13 @@ blockquote {
 	font-size: 14px;
 }
 em {
-	color: #95a5a6;
-	font-weight: normal;
+	color: #666;
+	font-weight: 300;
 	font-style: normal;
 }
 h4 span:first-child {
-	color: #000;
-	font-weight: bold;
+	color: #333;
+	font-weight: 400;
 }
 .container {
 	max-width: 750px;
@@ -77,22 +91,21 @@ h4 span:first-child {
 	margin-bottom: 10px;
 }
 .col-sm-12 h4 {
-	margin-top: 12px; 
+	margin-top: 12px;
 }
 .col-sm-12 + .col-sm-12 {
 	margin-top: 30px;
 }
 #header {
-	background: #f4f6f6;
-	padding: 50px 0;
-	margin-bottom: 30px;
+	padding: 50px 0 25px;
+	/*margin-bottom: 25px;*/
 }
 #header h2 {
 	color: #95a5a6;
 	font-size: 24px;
 }
 #content h3 {
-	color: #f1c40f;
+	color: #555;
 	font-size: 26px;
 	margin-top: -4px;
 }
@@ -105,11 +118,11 @@ h4 span:first-child {
 }
 #work .position,
 #volunteer .position {
-	font-weight: bold;
+	font-weight: 400;
 	margin-bottom: 8px;
 }
 #education .area {
-	font-weight: bold;
+	font-weight: 400;
 }
 #education .area:before {
 	content: "\f0d7";
@@ -166,7 +179,16 @@ h4 span:first-child {
 }
 @media (max-width: 480px) {
 	h1 {
-		font-size: 26px;
+		font-size: 28px;
+	}
+	#header h2 {
+		font-size: 24px;
+	}
+	#content h3 {
+		font-size: 20px;
+	}
+	h4 {
+		font-size: 16px;
 	}
 	.date {
 		font-size: 14px;
@@ -177,21 +199,111 @@ h4 span:first-child {
 	}
 	.strike-through span {
 		display: block;
-	}	
+	}
 	#header {
-		margin-bottom: 10px;
-		padding: 40px 0;
+		/*margin-bottom: 10px;*/
+		padding: 30px 0 0;
 	}
 	#actions {
 		display: none;
 	}
 }
 
+@media print {
+	body {
+		font-size: 12px;
+	}
+	a[href]:after {
+		display: none;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	#header h2 {
+		font-size: 18px;
+		margin-top: -8px;
+	}
+	h4 {
+		font-size: 13px;
+	}
+  #header {
+		padding: 0;
+	}
+
+	#content aside {
+		margin: 0 !important;
+	}
+
+	#content h3 {
+		font-size: 16px;
+		margin-top: 0;
+	}
+
+	blockquote {
+		border: 0;
+		border-left: 3px solid #e7e9ec;
+		font-size: 12px;
+	}
+
+	li:before {
+		font: 10px Octicons;
+	}
+
+	.strike-through {
+		border-top-color: transparent;
+	}
+	.strike-through span + span {
+		font-size: 12px;
+	}
+	.col-sm-push-3 {
+    left: 25%;
+	}
+	.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  float: left;
+	}
+	.col-sm-12 {
+	  width: 100%;
+	}
+	.col-sm-11 {
+	  width: 91.66666666666666%;
+	}
+	.col-sm-10 {
+	  width: 83.33333333333334%;
+	}
+	.col-sm-9 {
+	  width: 75%;
+	}
+	.col-sm-8 {
+	  width: 66.66666666666666%;
+	}
+	.col-sm-7 {
+	  width: 58.333333333333336%;
+	}
+	.col-sm-6 {
+	  width: 50%;
+	}
+	.col-sm-5 {
+	  width: 41.66666666666667%;
+	}
+	.col-sm-4 {
+	  width: 33.33333333333333%;
+	 }
+	 .col-sm-3 {
+	   width: 25%;
+	 }
+	 .col-sm-2 {
+	   width: 16.666666666666664%;
+	 }
+	 .col-sm-1 {
+	  width: 8.333333333333332%;
+	 }
+}
+
 	</style>
-	
+
 	</head>
 	<body>
-	
+
 	<header id="header">
 		<div class="container">
 			<div class="row">
@@ -216,7 +328,7 @@ h4 span:first-child {
 			<div class="row">
 			<div class="col-sm-6">
 				<strong>Email</strong>
-				<div class="email"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="89ecedfee8fbeda7eda7e1ecfbe7e8e7edecf3c9eee4e8e0e5a7eae6e4">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></div>
+				<div class="email"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2c49485b4d5e4802480244495e424d424849566c4b414d4540024f4341">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></div>
 			</div>
 			<div class="col-sm-6">
 				<strong>Phone</strong>
@@ -236,7 +348,7 @@ h4 span:first-child {
 			<h3>About</h3>
 		</aside>
 		<div class="col-sm-9">
-			<p>I&#x27;m originally from San Antonio, Texas. I enjoy crafting user interfaces and interactions. I&#x27;m very interested in Design Systems and have a strong passion for frontend engineering for products.</p>
+			<p>I'm originally from San Antonio, Texas. I enjoy crafting user interfaces and interactions. I'm very interested in Design Systems and have a strong passion for frontend engineering for products.</p>
 		</div>
 	</section>
 	<section id="profiles" class="row">
@@ -289,7 +401,7 @@ h4 span:first-child {
 				<h4 class="strike-through">
 					<span>ScaleFT</span>
 					<span class="date">
-						2015-11-01 — 2016-05-05
+						November 2015 — May 2016
 					</span>
 				</h4>
 				<div class="website pull-right">
@@ -301,16 +413,18 @@ h4 span:first-child {
 				<div class="summary">
 					<p>Primary responsbilities included frontend development of marketing, documentation and product dashboard sites. Also worked on print materials and content.</p>
 				</div>
-				<h4>Highlights</h4>
+				<p>
+					<strong>Highlights</strong>
+				</p>
 				<ul class="highlights">
-					<li class="bullet">&lt;a href=&#x27;/https://www.scaleft.com/blog/announcing-general-availability-and-coreos-support/&#x27;&gt;Launched GA product with a revamped dashboard&lt;/a&gt;</li>
+					<li class="bullet"><a href='/https://www.scaleft.com/blog/announcing-general-availability-and-coreos-support/'>Launched GA product with a revamped dashboard</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-12">
 				<h4 class="strike-through">
 					<span>Mailgun by Rackspace</span>
 					<span class="date">
-						2015-02-20 — 2015-10-30
+						February 2015 — October 2015
 					</span>
 				</h4>
 				<div class="website pull-right">
@@ -322,17 +436,19 @@ h4 span:first-child {
 				<div class="summary">
 					<p>Worked closely with a product designer and backend engineers. Responsible for Control Panel, Documentation and Marketing sites. Contributed to open source projects related to Mailgun services.</p>
 				</div>
-				<h4>Highlights</h4>
+				<p>
+					<strong>Highlights</strong>
+				</p>
 				<ul class="highlights">
-					<li class="bullet">&lt;a href=&#x27;http://blog.mailgun.com/product-update-dashboard-ui-improvements/&#x27;&gt;Dashboard UI Improvements&lt;/a&gt;</li>
-					<li class="bullet">&lt;a href=&#x27;http://blog.mailgun.com/multi-user-access-now-available-for-mailgun-customers/&#x27;&gt;Multi-User Access&lt;/a&gt;</li>
+					<li class="bullet"><a href='http://blog.mailgun.com/product-update-dashboard-ui-improvements/'>Dashboard UI Improvements</a></li>
+					<li class="bullet"><a href='http://blog.mailgun.com/multi-user-access-now-available-for-mailgun-customers/'>Multi-User Access</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-12">
 				<h4 class="strike-through">
 					<span>Rackspace</span>
 					<span class="date">
-						2010-10-12 — 2015-10-30
+						October 2010 — October 2015
 					</span>
 				</h4>
 				<div class="website pull-right">
@@ -342,98 +458,22 @@ h4 span:first-child {
 					Web Developer
 				</div>
 				<div class="summary">
-					<p>Responsible for the user experience and frontend development of my.rackspace.com, the control panel for Rackspace&#x27;s Dedicated and Hybrid Hosting customers. Core contributor of Canon, a frontend framework for fast and consistent development of Rackspace UIs.</p>
+					<p>Responsible for the user experience and frontend development of my.rackspace.com, the control panel for Rackspace's Dedicated and Hybrid Hosting customers. Core contributor of Canon, a frontend framework for fast and consistent development of Rackspace UIs.</p>
 				</div>
-				<h4>Highlights</h4>
+				<p>
+					<strong>Highlights</strong>
+				</p>
 				<ul class="highlights">
-					<li class="bullet">&lt;a href=&#x27;http://rackerlabs.github.io/canon/&#x27;&gt;Canon - UI Library&lt;/a&gt;</li>
-					<li class="bullet">&lt;a href=&#x27;http://blog.rackspace.com/get-more-from-your-data-with-rackspace-cloud-intelligence/&#x27;&gt;Frontend Development on Rackspace Intelligence&lt;/a&gt;</li>
-					<li class="bullet">&lt;a href=&#x27;http://blog.rackspace.com/rackconnect-updates/&#x27;&gt;RackConnect UI updates&lt;/a&gt;</li>
-					<li class="bullet">&lt;a href=&#x27;http://blog.rackspace.com/rackspace-private-cloud-management-just-got-easier-with-portal-updates/&#x27;&gt;Control Panel updates for VMware Private Cloud&lt;/a&gt;</li>
+					<li class="bullet"><a href='http://rackerlabs.github.io/canon/'>Canon - UI Library</a></li>
+					<li class="bullet"><a href='http://blog.rackspace.com/get-more-from-your-data-with-rackspace-cloud-intelligence/'>Frontend Development on Rackspace Intelligence</a></li>
+					<li class="bullet"><a href='http://blog.rackspace.com/rackconnect-updates/'>RackConnect UI updates</a></li>
+					<li class="bullet"><a href='http://blog.rackspace.com/rackspace-private-cloud-management-just-got-easier-with-portal-updates/'>Control Panel updates for VMware Private Cloud</a></li>
 				</ul>
 			</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="volunteer" class="row">
-		<aside class="col-sm-3">
-			<h3>Volunteer</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>The Starter League / Code Academy</span>
-					<span class="date">
-						2012-07-01 — 2013-06-01
-					</span>
-				</h4>
-				<div class="website pull-right">
-					<a href="http://www.starterleague.com">http://www.starterleague.com</a>
-				</div>
-				<div class="position">
-					Advanced HTML/CSS Mentor
-				</div>
-				<div class="summary">
-					<p>Mentored students in the advanced html/css program. Encouraged best practices and helped students navigate their career track.</p>
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-	
-	<section id="education" class="row">
-		<aside class="col-sm-3">
-			<h3>Education</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>Our Lady of the Lake University</span>
-					<span class="date">
-						2005-08-15 — 2009-05-07
-					</span>
-				</h4>
-				<div class="area">
-					Computer Information Systems &amp; Security
-				</div>
-				<div class="studyType">
-					Bachelor of Business Administration
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-	
-	<section id="awards" class="row">
-		<aside class="col-sm-3">
-			<h3>Awards</h3>
-		</aside>
-		<div class="col-sm-9">
-			<div class="row">
-			<div class="col-sm-12">
-				<h4 class="strike-through">
-					<span>The President&#x27;s Volunteer Service Award</span>
-				</h4>
-				<div class="date pull-right">
-					<em>Awarded</em>
-					2008-05-07
-				</div>
-				<div class="awarder">
-					<em>by</em>
-					<strong>Our Lady of the Lake University</strong>
-				</div>
-				<div class="summary">
-					Recognized for community service while a member of Sigma Theta Epsilon.
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-	
-	
 	<section id="skills" class="row">
 		<aside class="col-sm-3">
 			<h3>Skills</h3>
@@ -469,10 +509,88 @@ h4 span:first-child {
 		</div>
 	</section>
 
+	<section id="education" class="row">
+		<aside class="col-sm-3">
+			<h3>Education</h3>
+		</aside>
+		<div class="col-sm-9">
+			<div class="row">
+			<div class="col-sm-12">
+				<h4 class="strike-through">
+					<span>Our Lady of the Lake University</span>
+					<span class="date">
+						August 2005 — May 2009
+					</span>
+				</h4>
+				<div class="area">
+					Computer Information Systems & Security
+				</div>
+				<div class="studyType">
+					Bachelor of Business Administration
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
 
-	
+	<section id="awards" class="row">
+		<aside class="col-sm-3">
+			<h3>Awards</h3>
+		</aside>
+		<div class="col-sm-9">
+			<div class="row">
+			<div class="col-sm-12">
+				<h4 class="strike-through">
+					<span>The President's Volunteer Service Award</span>
+				</h4>
+				<div class="date pull-right">
+					<em>Awarded</em>
+					May 2008
+				</div>
+				<div class="awarder">
+					<em>by</em>
+					<strong>Our Lady of the Lake University</strong>
+				</div>
+				<div class="summary">
+					Recognized for community service while a member of Sigma Theta Epsilon.
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="volunteer" class="row">
+		<aside class="col-sm-3">
+			<h3>Volunteer</h3>
+		</aside>
+		<div class="col-sm-9">
+			<div class="row">
+			<div class="col-sm-12">
+				<h4 class="strike-through">
+					<span>The Starter League / Code Academy</span>
+					<span class="date">
+						July 2012 — June 2013
+					</span>
+				</h4>
+				<div class="website pull-right">
+					<a href="http://www.starterleague.com">http://www.starterleague.com</a>
+				</div>
+				<div class="position">
+					Advanced HTML/CSS Mentor
+				</div>
+				<div class="summary">
+					<p>Mentored students in the advanced html/css program. Encouraged best practices and helped students navigate their career track.</p>
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
 
 	</div>
-	
+
 	</body>
 </html>
